@@ -1,38 +1,214 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(216, 234, 255);
+  overflow: hidden;
+}
+
+/* header */
+
+.header {
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7rem;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+}
+
+.header-section {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.logo {
+  width: 7rem;
+  height: 7rem;
+}
+
+.links {
+  display: flex;
+  gap: 3rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #013672;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 1.8rem;
+  transition: 0.3s;
+}
+
+.link:hover {
+  scale: 1.1;
+  color: #08b48f;
+}
+
+/* rocket */
+
+.rocket-page {
+  max-width: 1280px;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+}
+
+.rocket-title {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card {
+  display: flex;
+  gap: 3rem;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  overflow-x: hidden;
+  margin-top: 5rem;
+  background-color: aliceblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.rocket-img {
+  min-width: 30rem;
+  max-height: 20rem;
+  border-radius: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.rocket-title {
+  font-size: 4rem;
+  color: #013672;
+}
+
+.card-title {
+  padding: 2rem 0;
+  font-size: 2rem;
+  color: #013672;
+}
+
+.card-description {
+  font-size: 1.6rem;
+  color: #013672;
+}
+
+.book {
+  margin-top: 2rem;
+  width: fit-content;
+  border: none;
+  border-radius: 10px;
+  background-color: #013672;
+  color: #fff;
+  padding: 1rem 3rem;
+  cursor: pointer;
+}
+
+.book-red {
+  background-color: #8d2901;
+}
+
+.reserved {
+  font-size: 1.8rem;
+  color: green;
+}
+
+/* missions */
+
+.mission-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  min-height: 10rem;
+  background-color: aliceblue;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  padding: 0 3rem 0 3rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.id-name {
+  display: flex;
+}
+
+.mission-description,
+.mission-id,
+.mission-name {
+  font-size: 1.6rem;
+  color: #013672;
+}
+
+/* Profile */
+
+.profile-bookins {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 5rem;
+}
+
+.booked {
+  min-width: 30rem;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.booked-title {
+  font-size: 2rem;
+  color: #013672;
+  margin-bottom: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.booked-item {
+  font-size: 1.6rem;
+  color: #013672;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(156, 156, 156, 0.301);
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.buttons {
+  display: flex;
+  padding: 1rem 2rem;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.join-mission {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #013672;
+  transition: 0.3s;
+}
+
+.not-member {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #646566;
+}
+
+.join-mission:hover {
+  scale: 1.1;
+}
+.green {
+  background-color: green;
+}
+.red {
+  background-color: #8d2901;
 }

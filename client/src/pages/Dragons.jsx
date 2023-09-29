@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux'
 import { cancelReservation, reserveDragons, setDragons } from '../redux/slices/dragonSlice'
 
@@ -8,16 +7,16 @@ const Dragons = () => {
 
     const dispatch = useDispatch()
     const dragons = useSelector((state) => state.dragons.dragons)
-    const reserved = useSelector((state) => state.dragons.reserved)
 
     useEffect(() => {
-        axios.get("https://api.spacexdata.com/v3/dragons")
-            .then((response) => {
-                dispatch(setDragons(response.data));
-            })
-            .catch((error) => {
+        if(dragons.length === 0){
+            fetch("https://api.spacexdata.com/v3/dragons")
+              .then((response) => response.json())
+              .then((data) => dispatch(setDragons(data)))
+              .catch((error) => {
                 console.error("Error fetching data", error);
-            });
+              });
+          }
     }, [dispatch]);
 
     const handleReservation = (id) => {

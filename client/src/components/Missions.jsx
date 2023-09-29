@@ -9,7 +9,7 @@ import {
 const Missions = () => {
   const dispatch = useDispatch();
 
-  const missions = useSelector((state) => state.dragons.dragons);
+  const missions = useSelector((state) => state.missions.missions);
 
   console.log(missions);
 
@@ -35,33 +35,38 @@ const Missions = () => {
     <div className="rocket-page">
       <p className="rocket-title">Missions</p>
       {missions.map((mission) => {
-        <div className="mission-card">
-          <div className="id-name">
-            <p className="mission-id">{mission.mission_id}</p>
-            <p className="mission-name">{mission.mission_name}</p>
+        return (
+          <div className="mission-card">
+            <div className="id-name">
+              <p className="mission-id">{mission.mission_id}</p>
+              <p className="mission-name">{mission.mission_name}</p>
+            </div>
+            <p className="mission-description">{mission.description}</p>
+
+            <div className="buttons">
+              {mission.reserved ? (
+                <button className="join-mission green">Active Member</button>
+              ) : (
+                <button className="join-mission">Not A Member</button>
+              )}
+              {!mission.reserved ? (
+                <button
+                  className={mission.reserved ? "" : "join-mission "}
+                  onClick={() => handleReservationM(mission.mission_id)}
+                >
+                  Join Mission
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleCancelReservationM(mission.mission_id)}
+                  className={mission.reserved ? "join-mission red" : ""}
+                >
+                  Leave mission
+                </button>
+              )}
+            </div>
           </div>
-          <p className="mission-description">{mission.description}</p>
-          <div className="buttons">
-            {!mission.reserved && (
-              <button
-                className={mission.reserved ? "not-member green" : "not-member"}
-                onClick={() => handleReservationM(!mission.id)}
-              >
-                {mission.reserved ? "Active Member" : "Not a member"}
-              </button>
-            )}
-            {mission.reserved && (
-              <button
-                onClick={() => handleCancelReservationM(mission.id)}
-                className={
-                  mission.reserved ? "join-mission red" : "join-mission"
-                }
-              >
-                {mission.reserved ? "Leave mission" : "Join Mission"}
-              </button>
-            )}
-          </div>
-        </div>;
+        );
       })}
     </div>
   );

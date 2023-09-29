@@ -45,25 +45,28 @@ const Dragons = () => {
               <div className="text-wrapper">
                 <p className="card-title">{dragon.name}</p>
                 <p className="card-description">{dragon.type}</p>
-                {!dragon.reserved && (
-                  <button
-                    className={dragon.reserved ? "book book-red" : "book"}
-                    onClick={() => handleReservation(dragon.id)}
-                  >
-                    Reserve
-                  </button>
-                )}
-                {dragon.reserved && (
-                  <button
-                    className={dragon.reserved ? "book book-red" : "book"}
-                    onClick={() => handleCancelReservation(dragon.id)}
-                  >
-                    Cancel
-                  </button>
-                )}
-                <p className="badge">
-                  {dragon.reserved ? "Reserved" : "Not Reserved"}
-                </p>
+                <div className="buttons-dragon">
+                  {" "}
+                  {!dragon.reserved && (
+                    <button
+                      className={dragon.reserved ? "book book-red" : "book"}
+                      onClick={() => handleReservation(dragon.id)}
+                    >
+                      Reserve
+                    </button>
+                  )}
+                  {dragon.reserved && (
+                    <button
+                      className={dragon.reserved ? "book book-red" : "book"}
+                      onClick={() => handleCancelReservation(dragon.id)}
+                    >
+                      Cancel
+                    </button>
+                  )}
+                  <p className="badge">
+                    {dragon.reserved ? "Reserved" : "Not Reserved"}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

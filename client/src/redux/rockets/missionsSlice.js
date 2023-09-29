@@ -14,14 +14,14 @@ const missionSlice = createSlice({
       const { id } = action.payload;
 
       state.missions = state.missions.map((mission) =>
-        mission.id === id ? { ...mission, reserved: true } : mission
+        mission.mission_id === id ? { ...mission, reserved: true } : mission
       );
     },
     cancelMissions: (state, action) => {
       const { id } = action.payload;
 
       state.missions = state.missions.map((mission) => {
-        if (mission.id !== id) return mission;
+        if (mission.mission_id !== id) return mission;
         return { ...mission, reserved: false };
       });
     },

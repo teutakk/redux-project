@@ -43,25 +43,28 @@ const Rockets = () => {
               <div className="text-wrapper">
                 <p className="card-title">{rocket.rocket_name}</p>
                 <p className="card-description">{rocket.description}</p>
-                {!rocket.reserved && (
-                  <button
-                    className={rocket.reserved ? "book book-red" : "book"}
-                    onClick={() => handleReservation(rocket.id)}
-                  >
-                    Reserve
-                  </button>
-                )}
-                {rocket.reserved && (
-                  <button
-                    className={rocket.reserved ? "book book-red" : "book"}
-                    onClick={() => handleCancelReservation(rocket.id)}
-                  >
-                    Cancel
-                  </button>
-                )}
-                <p className="badge">
-                  {rocket.reserved ? "Reserved" : "Not Reserved"}
-                </p>
+                <div className="buttons-rocket">
+                  {" "}
+                  {!rocket.reserved && (
+                    <button
+                      className={rocket.reserved ? "book book-red" : "book"}
+                      onClick={() => handleReservation(rocket.id)}
+                    >
+                      Reserve
+                    </button>
+                  )}
+                  {rocket.reserved && (
+                    <button
+                      className={rocket.reserved ? "book book-red" : "book"}
+                      onClick={() => handleCancelReservation(rocket.id)}
+                    >
+                      Cancel
+                    </button>
+                  )}
+                  <p className="badge">
+                    {rocket.reserved ? "Reserved" : "Not Reserved"}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

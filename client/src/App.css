@@ -8,6 +8,7 @@ html {
 
 body {
   background-color: rgb(216, 234, 255);
+  /* height: auto; */
 }
 
 /* header */
@@ -56,6 +57,7 @@ body {
   max-width: 1280px;
   padding: 1rem 2rem;
   margin: 0 auto;
+  height: 100vw;
 }
 
 .rocket-title {
@@ -114,6 +116,12 @@ body {
   font-size: 1.8rem;
   color: green;
 }
+.badge{
+  color: rgb(132, 132, 132);
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+}
 
 /* missions */
 
@@ -157,6 +165,7 @@ body {
 
 .booked {
   min-width: 30rem;
+  width: 20%;
   height: 20rem;
   display: flex;
   flex-direction: column;

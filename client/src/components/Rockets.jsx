@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import rocket from "./../assets/a.png.webp";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   cancelReservation,
@@ -32,7 +31,7 @@ const Rockets = () => {
       <p className="rocket-title">Rockets</p>
       {rockets.map((rocket) => {
         return (
-          <div>
+          <div key={rocket.id}>
             <div className="card">
               <img
                 src={rocket.flickr_images}
@@ -40,31 +39,27 @@ const Rockets = () => {
                 className="rocket-img"
               />
               <div className="text-wrapper">
-                <p className="card-title">
-                  {rocket.rocket_name}
-                  {/* <span className={"reserved"}>
-                      {showReserved ? "Reserved" : ""}{" "}
-                      </span> */}
+                <p className="card-title">{rocket.rocket_name}</p>
+                <p className="card-description">{rocket.description}</p>
+                {!rocket.reserved && (
+                  <button
+                    className={rocket.reserved ? "book book-red" : "book"}
+                    onClick={() => handleReservation(rocket.id)}
+                  >
+                    Reserve
+                  </button>
+                )}
+                {rocket.reserved && (
+                  <button
+                    className={rocket.reserved ? "book book-red" : "book"}
+                    onClick={() => handleCancelReservation(rocket.id)}
+                  >
+                    Cancel
+                  </button>
+                )}
+                <p className="badge">
+                  {rocket.reserved ? "Reserved" : "Not Reserved"}
                 </p>
-                <p className="card-description">
-                {rocket.description}
-                </p>
-                {/* <button
-                  onClick={() => handleReservation(rocket.id)}
-                  // className={showReserved ? "book book-red" : "book"}
-                >
-                  {" "}
-                  Reserve
-                  {/* {showReserved ? "Cancel Reservation" : "Book Rocket"} */}
-                {/* </button>  */}
-
-                <button onClick={() => handleReservation(rocket.id)}>
-                  Reserve rocket
-                </button>
-                <button onClick={() => handleCancelReservation(rocket.id)}>
-                  Cancel
-                </button>
-                <p>{rocket.reserved ? "Reserved" : "Not Reserved"}</p>
               </div>
             </div>
           </div>

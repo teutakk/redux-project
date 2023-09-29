@@ -12,7 +12,7 @@ const Rockets = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
 
   useEffect(() => {
-    if(rockets.length === 0){
+    if (rockets.length === 0) {
       fetch("https://api.spacexdata.com/v3/rockets")
         .then((response) => response.json())
         .then((data) => dispatch(setRockets(data)))
@@ -20,7 +20,7 @@ const Rockets = () => {
           console.error("Error fetching data", error);
         });
     }
-  }, [dispatch]);
+  }, [dispatch, rockets.length]);
 
   const handleReservation = (id) => {
     dispatch(reserveRockets({ id }));

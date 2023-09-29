@@ -12,22 +12,25 @@ const MyProfile = () => {
 
           {rockets
             .filter((rocket) => {
-              if(rocket.reserved){
-                return rocket
+              if (rocket.reserved) {
+                return rocket;
               }
             })
             .map((rocket) => {
               return (
                 <div key={rocket.id}>
-                  <p className="booked-item">{rocket.id}</p>
-                  <p className="booked-item">{rocket.rocket_name}</p>
-                  <p className="booked-item">{rocket.description}</p>
-                  ////
+                  <p className="booked-item">
+                    {rocket.id} <br />
+                    {rocket.rocket_name}
+                    <br />
+                    {rocket.description}
+                  </p>
+                  {/* <p className="booked-item">{rocket.rocket_name}</p>
+                  <p className="booked-item">{rocket.description}</p> */}
                 </div>
               );
             })}
-           
-            </div>
+        </div>
         <div className="booked">
           <p className="booked-title">My Missions</p>
           <p className="booked-item">Thaicom 1</p>
@@ -39,7 +42,7 @@ const MyProfile = () => {
           <p className="booked-item">Dragon 1</p>
         </div>
       </div>
-     </div>
+    </div>
   );
 };
 

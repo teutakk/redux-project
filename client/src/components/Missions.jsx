@@ -11,8 +11,6 @@ const Missions = () => {
 
   const missions = useSelector((state) => state.missions.missions);
 
-  console.log(missions);
-
   useEffect(() => {
     if (missions.length === 0) {
       fetch("https://api.spacexdata.com/v3/missions")
@@ -36,7 +34,7 @@ const Missions = () => {
       <p className="rocket-title">Missions</p>
       {missions.map((mission) => {
         return (
-          <div className="mission-card">
+          <div className="mission-card" key={mission.mission_id}>
             <div className="id-name">
               <p className="mission-id">{mission.mission_id}</p>
               <p className="mission-name">{mission.mission_name}</p>

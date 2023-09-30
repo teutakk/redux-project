@@ -11,8 +11,6 @@ const Dragons = () => {
 
   const dragons = useSelector((state) => state.dragons.dragons);
 
-  console.log(dragons);
-
   useEffect(() => {
     if (dragons.length === 0) {
       fetch("https://api.spacexdata.com/v3/dragons")

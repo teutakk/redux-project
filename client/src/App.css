@@ -35,7 +35,9 @@ body {
   display: flex;
   gap: 3rem;
 }
-
+.active{
+  text-decoration: underline;
+}
 .link {
   text-decoration: none;
   color: #013672;
@@ -47,6 +49,9 @@ body {
 
 .link:hover {
   scale: 1.1;
+  color: #08b48f;
+}
+.link.active{
   color: #08b48f;
 }
 

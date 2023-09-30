@@ -29,7 +29,7 @@ const MyProfile = () => {
                 {reservedRockets.map((rocket) => {
                   return (
                     <div key={rocket.id}>
-                      <p className="booked-item">
+                      <div className="booked-item">
                         <p className="item-id">
                           <strong>Rocket id:</strong> {rocket.id}{" "}
                         </p>
@@ -41,7 +41,7 @@ const MyProfile = () => {
                           {" "}
                           {rocket.description}
                         </p>
-                      </p>
+                      </div>
                     </div>
                   );
                 })}
@@ -65,8 +65,8 @@ const MyProfile = () => {
                 <div>
                   {reservedMissions.map((mission) => {
                     return (
-                      <div key={mission.id}>
-                        <p className="booked-item">
+                      <div key={mission.mission_id}>
+                        <div className="booked-item">
                           <p className="item-id">
                             {" "}
                             <strong> Mission id: </strong> {mission.mission_id}{" "}
@@ -79,7 +79,7 @@ const MyProfile = () => {
                             {" "}
                             {mission.description}
                           </p>
-                        </p>
+                        </div>
                       </div>
                     );
                   })}
@@ -101,7 +101,7 @@ const MyProfile = () => {
               <div>
                 {reservedDragons.map((dragon) => (
                   <div key={dragon.id}>
-                    <p className="booked-item">
+                    <div className="booked-item">
                       <p className="item-id">
                         {" "}
                         <strong>Dragon ID:</strong> {dragon.id}
@@ -112,7 +112,7 @@ const MyProfile = () => {
                       <p className="item-description">
                         <strong>Dragon Type:</strong> {dragon.type}
                       </p>
-                    </p>
+                    </div>
                   </div>
                 ))}
               </div>

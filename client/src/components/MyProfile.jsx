@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 const MyProfile = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
   const dragons = useSelector((state) => state.dragons.dragons);
   const missions = useSelector((state) => state.missions.missions);
+
   const [showMore, setShowMore] = useState("");
   const [showMission, setShowMission] = useState("");
   const [showDragon, setShowDragon] = useState("");

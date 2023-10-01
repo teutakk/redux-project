@@ -49,7 +49,11 @@ const MyProfile = () => {
               </div>
             ) : (
               <p className="no-item">
-                {reservedRockets.length === 0 ? <p>No item added</p> : ""}
+                {reservedRockets.length === 0 ? (
+                  <p>No item added</p>
+                ) : (
+                  `Rockets added (${reservedRockets.length}) `
+                )}
               </p>
             )}
           </div>
@@ -87,7 +91,11 @@ const MyProfile = () => {
                 </div>
               ) : (
                 <p className="no-item">
-                  {reservedMissions.length === 0 ? <p>No item added</p> : ""}
+                  {reservedMissions.length === 0 ? (
+                    <p>No item added</p>
+                  ) : (
+                    `Missions added (${reservedMissions.length}) `
+                  )}
                 </p>
               )}
             </div>
@@ -119,7 +127,11 @@ const MyProfile = () => {
               </div>
             ) : (
               <p className="no-item">
-                {reservedDragons.length === 0 ? <p>No item added</p> : ""}
+                {reservedDragons.length === 0 ? (
+                  <p>No item added</p>
+                ) : (
+                  `Dragons added (${reservedDragons.length}) `
+                )}
               </p>
             )}
           </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Rockets from "./Rockets";
 import Dragons from "./Dragons";
 import Missions from "./Missions";

@@ -8,7 +8,6 @@ html {
 
 body {
   background-color: rgb(216, 234, 255);
-  /* height: auto; */
 }
 
 /* header */
@@ -36,7 +35,9 @@ body {
   display: flex;
   gap: 3rem;
 }
-
+.active{
+  text-decoration: underline;
+}
 .link {
   text-decoration: none;
   color: #013672;
@@ -50,14 +51,16 @@ body {
   scale: 1.1;
   color: #08b48f;
 }
+.link.active{
+  color: #08b48f;
+}
 
 /* rocket */
 
 .rocket-page {
   max-width: 1280px;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 10rem;
   margin: 0 auto;
-  height: 100vw;
 }
 
 .rocket-title {

@@ -4,11 +4,12 @@
 }
 html {
   font-size: 62.5%;
+
+  overflow-y: scroll;
 }
 
 body {
   background-color: rgb(216, 234, 255);
-  overflow: hidden;
 }
 
 /* header */

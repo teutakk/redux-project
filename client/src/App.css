@@ -46,7 +46,8 @@ body {
   font-weight: 700;
   letter-spacing: 3px;
   font-size: 1.8rem;
-  transition: 0.3s;
+  transition: 0.2s;
+  padding-bottom: 2rem;
 }
 
 .link:hover {
@@ -55,6 +56,7 @@ body {
 }
 .link.active {
   color: #08b48f;
+  border-bottom: 2px solid #08b48f;
 }
 
 /* rocket */
@@ -118,10 +120,10 @@ body {
   background-color: #8d2901;
 }
 
-.reserved {
+/* .reserved {
   font-size: 1.8rem;
-  color: green;
-}
+  color: rgb(17, 0, 128);
+} */
 
 .buttons-rocket {
   display: flex;
